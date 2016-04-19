@@ -1,0 +1,17 @@
+<nav class="categories">
+    <h3 class="categories__title">Categories</h3>
+</nav>
+<ul class="gallery__list">
+    <li class="gallery__item"><img src="http://s6.postimg.org/h21d6ae2p/img_01.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/iicvofgzl/img_02.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/52puyz8ht/img_03.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/4r8em7s1t/img_04.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/i9fayi475/img_05.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/sxj1xce69/img_07.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/sm1lkkxq9/img_08.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/4wc5vvzcx/img_09.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/npxysvxkx/img_10.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/hqet2z269/img_11.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/cg9ubohxd/img_12.jpg" width="100%" height="auto"></li>
+    <li class="gallery__item"><img src="http://s6.postimg.org/8xxufah1d/img_14.jpg" width="100%" height="auto"></li>
+</ul>

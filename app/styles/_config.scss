@@ -1,0 +1,38 @@
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+//@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+// bower:scss
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/susy/sass/_susy.scss";
+@import "../../bower_components/sassy-maps/sass/_sassy-maps.scss";
+@import "../../bower_components/breakpoint-sass/stylesheets/_breakpoint.scss";
+// endbower
+
+@import "compass";
+
+
+/* Variables - Colour */
+$color1: #24555C;
+$color2: #F2F5F8;
+$color3: #6DC0D1;
+$color4: #2D3638;
+$accent: #D24780;
+
+/* Variables - Breakpoints */
+$bp-s: 420px;
+$bp-m: 720px;
+$bp-l: 1100px;
+
+
+$susy: (
+  columns: 12,
+  gutters: 0.2,
+  global-box-sizing: border-box
+);
+
+/* Maps */
+$map-l: (
+  columns: 16,
+  gutters: 0,
+  box-sizing: border-box
+);

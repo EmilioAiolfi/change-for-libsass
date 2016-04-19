@@ -1,0 +1,32 @@
+
+// Fonts 
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Quattrocento+Sans);
+
+// Variables – Fonts
+$headings: 'Libre Baskerville', serif;
+$paragraph: 'Quattrocento Sans', sans-serif;
+
+// headings
+h1 {
+    font-family: $headings;
+    font-size: 2em;
+    @media (min-width: $bp-l) {
+        font-size: 2.2em;
+    }
+}
+
+h2 {
+    font-family: $paragraph;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+h3 { margin: 0; }
+
+p {
+    font-family: $paragraph;
+    line-height: 1.6;
+}

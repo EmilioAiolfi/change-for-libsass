@@ -1,0 +1,13 @@
+<nav class="categories">
+    <h3 class="categories__title">Categories</h3>
+</nav>
+<ul class="icons__list">
+    {#listIcons}
+      <li class="icon__item">
+        <i class="icon {iconName}"></i>
+        <p>
+          {iconName}
+        </p>
+      </li>
+    {/listIcons}
+</ul>

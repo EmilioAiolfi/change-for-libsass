@@ -1,0 +1,16 @@
+@mixin padding {
+    padding-left: 1em;
+    padding-right: 1em;
+    @media (min-width: $bp-s) {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+    @media (min-width: $bp-m) {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    @media (min-width: $bp-l) {
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+}

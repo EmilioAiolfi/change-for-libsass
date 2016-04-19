@@ -1,0 +1,10 @@
+<footer>
+    <div class="about__photo">
+        <img class="profile" src="http://lorempixel.com/400/400/fashion" width="100%" height="auto">
+    </div>
+    <div class="about__text">
+        <h2>About me</h2>
+        <p>I am a designer and illustrator based in Bristol, UK. I love exploring the city and surrounding areas armed with my camera, looking for hidden gems.</p>
+    </div>
+    <p class="footer__caption">&copy; Emilio Aiolfi 2016</p>
+</footer>
