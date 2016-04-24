@@ -1,5 +1,5 @@
 <nav class="categories">
-    <h3 class="categories__title">Categories</h3>
+    <h3 class="categories__title">Gallery Photos</h3>
 </nav>
 <ul class="gallery__list">
     <li class="gallery__item"><img src="http://s6.postimg.org/h21d6ae2p/img_01.jpg" width="100%" height="auto"></li>

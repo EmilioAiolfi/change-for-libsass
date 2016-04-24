@@ -1,11 +1,11 @@
 <nav class="categories">
-    <h3 class="categories__title">Categories</h3>
+    <h3 class="categories__title">Sprites icons</h3>
 </nav>
 <ul class="icons__list">
     {#listIcons}
       <li class="icon__item">
         <i class="icon {iconName}"></i>
-        <p>
+        <p class="icon__name">
           {iconName}
         </p>
       </li>
