@@ -21,10 +21,7 @@ module.exports = function (grunt) {
 
   // Load compass-importer
   var compass = require('compass-importer')
-
   var generateIconsData = require('./grunt/icons-data-generator.js')(grunt);;
-  console.log('generateIconsData', generateIconsData);
-  // grunt.registerTask('build-icon', function () { generateIconsData.call(this, grunt); });
 
   // Configurable paths
   var config = {
