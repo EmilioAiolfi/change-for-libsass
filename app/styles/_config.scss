@@ -30,6 +30,9 @@ $susy: (
   global-box-sizing: border-box
 );
 
+/* Makes border-box properties */
+@include border-box-sizing;
+
 /* Maps */
 $map-l: (
   columns: 16,

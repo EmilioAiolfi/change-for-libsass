@@ -55,7 +55,7 @@ module.exports = function (grunt) {
       },
       dusthtml: {
         files: ['<%= config.app %>/templates/{,*/}*.dust'],
-        tasks: ['dusthtml:server'],
+        tasks: ['dusthtml'],
       },
       sass: {
         files: [
@@ -197,20 +197,21 @@ module.exports = function (grunt) {
           partialsDir: '<%= config.app %>/templates/partials/'
         },
 
-        dist: {
-            options: {
-                context: {
-                  env : {  production : true }
-                }
-            },
-            src: '<%= config.app %>/templates/index.dust',
-            dest: 'dist/index.html'
+        index: {
+          src: [ '<%= config.app %>/templates/index.dust' ],
+          dest: '.tmp/index.html'
         },
 
-        server: {
-          src: '<%= config.app %>/templates/index.dust',
-          dest: '.tmp/index.html'
+        libsass: {
+          src: [ '<%= config.app %>/templates/libsass.dust' ],
+          dest: '.tmp/libsass.html'
+        },
+
+        compass: {
+          src: [ '<%= config.app %>/templates/compass.dust' ],
+          dest: '.tmp/compass.html'
         }
+
     },
     //
     // sprite: {
@@ -496,10 +497,11 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up build process
     concurrent: {
       server: [
-        'dusthtml:server',
+        'dusthtml',
         'babel:dist',
         'sprite',
-        'sass'
+        'sass',
+        'compass:server'
       ],
       compass: [
         'babel:dist',
@@ -510,7 +512,7 @@ module.exports = function (grunt) {
         'sass'
       ],
       test: [
-        'dusthtml:server',
+        'dusthtml',
         'babel'
       ],
       dist: [
@@ -561,7 +563,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'dusthtml:dist',
+    'dusthtml',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

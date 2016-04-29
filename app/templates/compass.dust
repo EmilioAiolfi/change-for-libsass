@@ -1,0 +1,23 @@
+{>layout/}
+
+{<styles}
+  <!-- build:css(.tmp) styles/compass-version.css -->
+  <link rel="stylesheet" href="styles/compass-version.css">
+  <!-- endbuild -->
+{/styles}
+
+{<header_content}
+  <header>
+      <div class="header__text">
+          <h1>Compass</h1>
+      </div>
+  </header>
+{/header_content}
+
+
+{<content}
+  {>gallery /}
+  {>icons-list /}
+{/content}
+
+{<footer_content}{/footer_content}

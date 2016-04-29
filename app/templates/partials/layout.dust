@@ -15,9 +15,8 @@
     <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/libsass-version.css -->
-    <link rel="stylesheet" href="styles/libsass-version.css">
-    <!-- endbuild -->
+    {+styles}
+    {/styles}
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -29,12 +28,16 @@
     <![endif]-->
 
     <div id="wrapper">
-      {>header /}
+      {+header_content}
+        {>header /}
+      {/header_content}
       <main>
         {+content}
         {/content}
       </main>
-      {>footer /}
+      {+footer_content}
+        {>footer /}
+      {/footer_content}
     </div>
 
 
