@@ -16,7 +16,8 @@ module.exports = function (grunt) {
   // Automatically load required grunt tasks
   require('jit-grunt')(grunt, {
     dusthtml: 'grunt-dust-html',
-    useminPrepare: 'grunt-usemin'
+    useminPrepare: 'grunt-usemin',
+    sprite: 'grunt-spritesmith'
   });
 
   // Load compass-importer
@@ -57,11 +58,19 @@ module.exports = function (grunt) {
         tasks: ['dusthtml:server'],
       },
       sass: {
-        files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
+        files: [
+          '<%= config.app %>/styles/{,*/}*.{scss,sass}',
+          '!<%= config.app %>/styles/_compass/{,*/}*.{scss,sass}',
+          '!<%= config.app %>/styles/compass-version.scss'
+        ],
         tasks: ['sass', 'postcss']
       },
       compass: {
-        files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
+        files: [
+          '<%= config.app %>/styles/{,*/}*.{scss,sass}',
+          '!<%= config.app %>/styles/_libsass/{,*/}*.{scss,sass}',
+          '!<%= config.app %>/styles/libsass-version.scss'
+        ],
         tasks: ['compass:server', 'postcss'],
       },
       styles: {
@@ -203,13 +212,35 @@ module.exports = function (grunt) {
           dest: '.tmp/index.html'
         }
     },
-
+    //
+    // sprite: {
+    //   main: {
+    //     // Include all normal and `-2x` (retina) images
+    //     //   e.g. `github.png`, `github-2x.png`
+    //     src: ['*.png'],
+    //
+    //     // Filter out `-2x` (retina) images to separate spritesheet
+    //     //   e.g. `github-2x.png`, `twitter-2x.png`
+    //     retinaSrcFilter: ['*-2x.png'],
+    //
+    //     // Generate a normal and a `-2x` (retina) spritesheet
+    //     dest: 'dist/spritesheet.png',
+    //     retinaDest: 'dist/spritesheet-2x.png',
+    //
+    //     // Generate SCSS variables/mixins for both spritesheets
+    //     destCss: 'sprites.scss'
+    //   }
+    // },
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
-        sassDir: '<%= config.app %>/styles',
+        sassDir:  '<%= config.app %>/styles/',
         cssDir: '.tmp/styles',
+        specify: [
+          '<%= config.app %>/styles/*',
+          '!<%= config.app %>/styles/libsass-version.scss',
+        ],
         generatedImagesDir: '.tmp/images/generated',
         imagesDir: '<%= config.app %>/images',
         javascriptsDir: '<%= config.app %>/scripts',
@@ -248,11 +279,31 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.app %>/styles',
-          src: ['*.{scss,sass}'],
+          src: [
+            '*.{scss,sass}',
+            '!_compass/*.{scss,sass}',
+            '!compass-version.scss'
+          ],
           dest: '.tmp/styles',
           ext: '.css'
         }]
       }
+    },
+
+    sprite: {
+        dist: {
+            src: ['<%= config.app %>/images/sprites/icon/*.png'],
+            dest: '.tmp/images/generated/sprites/sprite.png',
+            destCss: '<%= config.app %>/styles/_libsass/_smith-sprites.scss',
+            cssFormat: 'scss',
+            padding: 20,
+            // Prefix all sprite names with `sprite-` (e.g. `home` -> `sprite-home`)
+            cssVarMap: function (sprite) {
+              sprite.name = 'icon-' + sprite.name;
+            },
+
+            imgPath: '../images/generated/sprites/sprite.png'
+        }
     },
 
     postcss: {
@@ -447,7 +498,8 @@ module.exports = function (grunt) {
       server: [
         'dusthtml:server',
         'babel:dist',
-        'compass:server'
+        'sprite',
+        'sass'
       ],
       compass: [
         'babel:dist',
