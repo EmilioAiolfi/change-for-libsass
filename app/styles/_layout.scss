@@ -7,7 +7,6 @@
 html,
 body {
   height: 100%;
-  min-height: auto;
 }
 
 body {
@@ -20,7 +19,8 @@ img {
     display: block;
 }
 
-#wrapper {
+.height-full,
+.wrapper {
   height: 100%;
 }
 
@@ -35,102 +35,105 @@ img {
 }
 
 header {
-    @include padding;
-    background-color: $color2;
-    color: darken($color4, 20%);
-    padding-top: 3em;
-    padding-bottom: 3em;
-    text-align: center;
-    border-top: 4px solid darken($color2, 10%);
-    h1 {
-        line-height: 1.2;
-        margin-bottom: 1em;
-        padding-bottom: 1em;
-        border-bottom: 2px solid darken($color2, 10%);
-    }
+  @include padding;
+  background-color: $color2;
+  color: darken($color4, 20%);
+  padding-top: 3em;
+  padding-bottom: 3em;
+  text-align: center;
+  border-top: 4px solid darken($color2, 10%);
+
+  h1 {
+    line-height: 1.2;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid darken($color2, 10%);
+  }
 }
 
 .header__text {
-    max-width: 30em;
-    margin: 0 auto;
+  max-width: 30em;
+  margin: 0 auto;
 }
 
 main {
-    height: 100%;
-    background-color: darken($color4, 10%);
+  background-color: darken($color4, 10%);
 }
 
 nav.categories {
-    background-color: $accent;
-    color: darken($accent, 30%);
-    padding: 1em;
-    font-family: $paragraph;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    border-top: 4px solid darken($accent, 15%);
+  background-color: $accent;
+  color: darken($accent, 30%);
+  padding: 1em;
+  font-family: $paragraph;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  border-top: 4px solid darken($accent, 15%);
 }
 
 ul.gallery__list {
-    @include clearfix;
-    @include padding;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    list-style: none;
-    margin: 0;
-    li {
-        @include gallery(6);
-        margin-bottom: gutter(12);
-        &:nth-last-child(-n+2) {
-            margin-bottom: 0;
-        }
+  @include clearfix;
+  @include padding;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  list-style: none;
+  margin: 0;
+  li {
+    @include gallery(6);
+    margin-bottom: gutter(12);
+    &:nth-last-child(-n+2) {
+        margin-bottom: 0;
     }
+  }
 }
 
 
 ul.icons__list {
-    @include clearfix;
-    @include padding;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    list-style: none;
-    margin: 0;
-    li {
-        @include gallery(4);
-        margin-bottom: gutter(12);
-        text-align: center;
-        &:nth-last-child(-n+2) {
-            margin-bottom: 0;
-        }
+  @include clearfix;
+  @include padding;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  list-style: none;
+  margin: 0;
+
+  li {
+    @include gallery(4);
+    margin-bottom: gutter(12);
+    text-align: center;
+    &:nth-last-child(-n+2) {
+        margin-bottom: 0;
     }
+  }
 }
 
 
 
 footer {
-    @include padding;
-    @include clearfix;
-    padding-top: 3em;
-    background-color: $color4;
-    color: lighten($color4, 40%);
-    clear: both;
-    border-top: 6px solid darken($color4, 10%);
-    .about__photo {
-        @include span(3);
-        padding: 0 1em;
-        img {
-            max-width: 20em;
-            border-radius: 50%;
-        }
+  @include padding;
+  @include clearfix;
+  padding-top: 3em;
+  background-color: $color4;
+  color: lighten($color4, 40%);
+  clear: both;
+  border-top: 6px solid darken($color4, 10%);
+
+  .about__photo {
+    @include span(3);
+    padding: 0 1em;
+    img {
+      max-width: 20em;
+      border-radius: 50%;
     }
-    .about__text {
-        @include span(9 last);
-    }
+  }
+
+  .about__text {
+    @include span(9 last);
+  }
 }
 
 p.footer__caption {
-    clear: both;
-    padding: 3em 0 1em 0;
-    color: darken($color4, 10%);
+  clear: both;
+  padding: 3em 0 1em 0;
+  color: darken($color4, 10%);
 }
 
 /* First breakpoint */
@@ -142,18 +145,16 @@ p.footer__caption {
   ul.gallery__list li {
     @include gallery(4);
     &:nth-last-child(-n+3) {
-        margin-bottom: 0;
+      margin-bottom: 0;
     }
   }
 
   ul.icons__list li {
     @include gallery(2);
     &:nth-last-child(-n+3) {
-        margin-bottom: 0;
+      margin-bottom: 0;
     }
   }
-
-
 }
 
 /* 16-column layout  – activated at large breakpoint */
@@ -185,7 +186,7 @@ p.footer__caption {
     @include gallery(2 of 12);
       margin-bottom: 0;
       &:nth-last-child(-n+2) {
-          margin-bottom: 0;
+        margin-bottom: 0;
       }
   }
 

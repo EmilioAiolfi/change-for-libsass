@@ -1,1 +1,11 @@
 .icon__name { color: #fff; }
+
+.icon {
+  @include inline-block();
+  width: 50px;
+  height: 50px;
+  &.large {
+    width: 100px;
+    height: 100px;
+  }
+}
