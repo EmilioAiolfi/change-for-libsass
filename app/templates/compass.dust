@@ -9,11 +9,12 @@
 {<header_content}
   <header>
       <div class="header__text">
-          <h1>Compass</h1>
+          <h1><span class="icon icon-compass-only"></span>Compass</h1>
       </div>
   </header>
 {/header_content}
 
+{<main_class}{/main_class}
 
 {<content}
   {>gallery /}
