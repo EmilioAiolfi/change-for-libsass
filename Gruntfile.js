@@ -314,7 +314,7 @@ module.exports = function (grunt) {
             },
 
             imgPath: '../images/generated/sprites/sprite.png'
-        },
+        }
 
     },
 
