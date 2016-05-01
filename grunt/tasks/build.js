@@ -1,0 +1,26 @@
+module.exports = function(grunt) {
+
+  grunt.registerTask('build', [
+    'clean:dist',
+    'dusthtml',
+    'wiredep',
+    'useminPrepare',
+    'concurrent:dist',
+    'postcss',
+    'concat',
+    'cssmin',
+    'uglify',
+    'copy:dist',
+    'modernizr',
+    'filerev',
+    'usemin',
+    'htmlmin'
+  ]);
+
+  grunt.registerTask('default', [
+    'newer:eslint',
+    'test',
+    'build'
+  ]);
+  
+};
