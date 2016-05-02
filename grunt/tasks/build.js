@@ -2,7 +2,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'dusthtml',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
@@ -22,5 +21,5 @@ module.exports = function(grunt) {
     'test',
     'build'
   ]);
-  
+
 };

@@ -5,5 +5,5 @@ module.exports = {
   compass: ['babel:dist', 'compass:server'],
   sass: ['babel:dist', 'sass'],
   test: ['dusthtml', 'babel'],
-  dist: ['babel', 'sass', 'imagemin', 'svgmin']
+  dist: ['dusthtml', 'babel', 'sprite', 'sass', 'compass:dist', 'imagemin', 'svgmin']
 };
