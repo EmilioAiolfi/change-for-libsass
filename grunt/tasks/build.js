@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
-    'postcss',
+    'postcss:dist',
     'concat',
     'cssmin',
     'uglify',

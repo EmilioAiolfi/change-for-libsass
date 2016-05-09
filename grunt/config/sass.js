@@ -9,7 +9,7 @@ module.exports = {
     includePaths: ['./bower_components'],
     importer: compass
   },
-  dist: {
+  server: {
     files: [{
       expand: true,
       cwd: '<%= config.app %>/styles',
@@ -19,6 +19,19 @@ module.exports = {
         '!compass-version.scss'
       ],
       dest: '.tmp/styles',
+      ext: '.css'
+    }]
+  },
+  dist: {
+    files: [{
+      expand: true,
+      cwd: '<%= config.app %>/styles',
+      src: [
+        '*.{scss,sass}',
+        '!_compass/*.{scss,sass}',
+        '!compass-version.scss'
+      ],
+      dest: '<%= config.dist %>/styles',
       ext: '.css'
     }]
   }

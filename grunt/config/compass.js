@@ -3,12 +3,10 @@
 module.exports = {
   options: {
     sassDir: '<%= config.app %>/styles/',
-    cssDir: '.tmp/styles',
     specify: [
       '<%= config.app %>/styles/*',
       '!<%= config.app %>/styles/libsass-version.scss'
     ],
-    generatedImagesDir: '.tmp/images/generated',
     imagesDir: '<%= config.app %>/images',
     javascriptsDir: '<%= config.app %>/scripts',
     fontsDir: '<%= config.app %>/fonts',
@@ -20,14 +18,17 @@ module.exports = {
     assetCacheBuster: false,
     raw: 'Sass::Script::Number.precision = 10\n'
   },
-  dist: {
-    options: {
-      generatedImagesDir: '<%= config.dist %>/images/generated'
-    }
-  },
   server: {
     options: {
+      cssDir: '.tmp/styles',
+      generatedImagesDir: '.tmp/images/generated',
       debugInfo: true
+    }
+  },
+  dist: {
+    options: {
+      cssDir: '<%= config.dist %>/styles',
+      generatedImagesDir: '<%= config.dist %>/images/generated'
     }
   }
 };

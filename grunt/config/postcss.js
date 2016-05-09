@@ -10,12 +10,20 @@ module.exports = {
       })
     ]
   },
-  dist: {
+  server: {
     files: [{
       expand: true,
       cwd: '.tmp/styles/',
       src: '{,*/}*.css',
       dest: '.tmp/styles/'
+    }]
+  },
+  dist: {
+    files: [{
+      expand: true,
+      cwd: '<%= config.dist %>/styles/',
+      src: '{,*/}*.css',
+      dest: '<%= config.dist %>/styles/'
     }]
   }
 };

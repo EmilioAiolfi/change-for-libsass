@@ -26,7 +26,7 @@ module.exports = {
       '!<%= config.app %>/styles/_compass/{,*/}*.{scss,sass}',
       '!<%= config.app %>/styles/compass-version.scss'
     ],
-    tasks: ['sass', 'postcss']
+    tasks: ['sass:server', 'postcss:server']
   },
   sprite: {
     files: [
@@ -41,10 +41,10 @@ module.exports = {
       '!<%= config.app %>/styles/_libsass/{,*/}*.{scss,sass}',
       '!<%= config.app %>/styles/libsass-version.scss'
     ],
-    tasks: ['compass:server', 'postcss']
+    tasks: ['compass:server', 'postcss:server']
   },
   styles: {
     files: ['<%= config.app %>/styles/{,*/}*.css'],
-    tasks: ['newer:copy:styles', 'postcss']
+    tasks: ['newer:copy:styles', 'postcss:server']
   }
 };
