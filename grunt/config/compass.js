@@ -11,8 +11,6 @@ module.exports = {
     javascriptsDir: '<%= config.app %>/scripts',
     fontsDir: '<%= config.app %>/fonts',
     importPath: './bower_components',
-    httpImagesPath: '/images',
-    httpGeneratedImagesPath: '/images/generated',
     httpFontsPath: 'fonts',
     relativeAssets: false,
     assetCacheBuster: false,
@@ -21,6 +19,8 @@ module.exports = {
   server: {
     options: {
       cssDir: '.tmp/styles',
+      httpImagesPath: '/images',
+      httpGeneratedImagesPath: '/images/generated',
       generatedImagesDir: '.tmp/images/generated',
       debugInfo: true
     }
@@ -28,6 +28,8 @@ module.exports = {
   dist: {
     options: {
       cssDir: '<%= config.dist %>/styles',
+      httpImagesPath: '../images',
+      httpGeneratedImagesPath: '../images/generated',
       generatedImagesDir: '<%= config.dist %>/images/generated'
     }
   }

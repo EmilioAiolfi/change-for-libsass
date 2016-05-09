@@ -20,7 +20,16 @@ module.exports = {
       dest: '<%= config.dist %>',
       src: [
         '{,*/}*.html'
-      ]    }, {
+      ]
+    }, {
+      expand: true,
+      dot: true,
+      cwd: '.tmp/images/generated/sprites/',
+      dest: '<%= config.dist %>/images/generated/sprites/',
+      src: [
+        'sprite.png'
+      ]
+    }, {
       expand: true,
       dot: true,
       cwd: '.',
