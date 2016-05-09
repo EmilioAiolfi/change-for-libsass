@@ -16,6 +16,13 @@ module.exports = {
     }, {
       expand: true,
       dot: true,
+      cwd: '.tmp',
+      dest: '<%= config.dist %>',
+      src: [
+        '{,*/}*.html'
+      ]    }, {
+      expand: true,
+      dot: true,
       cwd: '.',
       src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
       dest: '<%= config.dist %>'
